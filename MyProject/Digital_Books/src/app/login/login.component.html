@@ -1,0 +1,62 @@
+<!--<form style="margin: 10px;"></form>-->
+   <!-- <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control"  [(ngModel)]="UserDataModel.userName" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="UserDataModel.password">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="loginUser()">Log In</button>-->
+
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+    
+                <h3 class="mb-5">Sign in</h3>
+    
+                <div class="form-outline mb-4">
+                  <label _ngcontent-wec-c51="" for="typeEmailX-2" class="form-label" style="margin-right: 75%;">User Name</label>
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" [(ngModel)]="UserDataModel.userName"/>
+                </div>
+    
+                <div class="form-outline mb-4">
+                  <label _ngcontent-wec-c51="" for="typeEmailX-2" class="form-label" style="margin-right: 80%;">Password</label>
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" [(ngModel)]="UserDataModel.password"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label _ngcontent-wec-c51="" for="typeEmailX-2" class="form-label" style="margin-right: 80%;">Type</label>
+                <!-- <input type="password" id="typePasswordX-2" class="form-control form-control-lg" [(ngModel)]="UserDataModel.type"/>--> 
+                
+                <select class="form-select"  [(ngModel)]="UserDataModel.type" placeholder="Select Category"
+                aria-label="Default select example">
+                <option selected>Select Category</option>
+                <option value="Reader">Reader</option>
+                <option value="Author">Author</option>
+                </select>
+              </div>
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-start mb-4">
+                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                  <label class="form-check-label" for="form1Example3"> Remember password </label>
+                </div>
+    
+                <button class="btn btn-primary btn-lg btn-block" type="button" (click)="loginUser()">Login</button>
+    
+                <hr class="my-4">
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  

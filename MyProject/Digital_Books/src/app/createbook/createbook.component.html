@@ -1,0 +1,115 @@
+<br /><br />
+<!--<form [formGroup]="CreateBookModel.formCreateBookGroup"></form>-->
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Create Books</div>
+                <div class="card-body">
+                    <form action="" method="" [formGroup]="CreateBookModel.formCreateBookGroup"><!--[formGroup]="CreateBookModel.formCreateBookGroup"-->
+                        <div class="form-group row">
+                            <label for="Title" class="col-md-4 col-form-label text-md-right">Title</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Title" class="form-control" [(ngModel)]="CreateBookModel.title"
+                                    name="Title" formControlName="createbooktitle"><!--formControlName="createbooktitle" -->
+                                <br /><br />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="author" class="col-md-4 col-form-label text-md-right">Author</label>
+                            <div class="col-md-6">
+                                <input type="text" id="author" class="form-control" [(ngModel)]="CreateBookModel.author"
+                                    name="author" formControlName="createbookauthor"><!--formControlName="createbooktitle" -->
+                                <br /><br />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Category" class="col-md-4 col-form-label text-md-right">Category</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Category" class="form-control"
+                                    [(ngModel)]="CreateBookModel.category" name="Category" formControlName="createbookcategory"><!--formControlName="createbookcategory"-->
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Image" class="col-md-4 col-form-label text-md-right">Image</label>
+                            <div class="col-md-6">
+                              <!--  <input type="file" id="Image" class="form-control" [(ngModel)]="CreateBookModel.image"
+                                    name="Image" >--><!--formControlName="createbookimage"-->
+                                    <input [(ngModel)]="CreateBookModel.image" class="form-control" type="file" (change)="onFileChanged($event)" formControlName="createbookimage">
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Price" class="col-md-4 col-form-label text-md-right">Price</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Price" class="form-control" [(ngModel)]="CreateBookModel.price"
+                                    name="Price" formControlName="createbookprice"><!--formControlName="createbookprice"-->
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Publisher" class="col-md-4 col-form-label text-md-right">Publisher</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Publisher" class="form-control"
+                                    [(ngModel)]="CreateBookModel.publisher" name="publisher" formControlName="createbookpublisher"><!--formControlName="createbookpublisher"-->
+                                <br /><br />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="releasedDate" class="col-md-4 col-form-label text-md-right">Released Date</label>
+                            <div class="col-md-6">
+                                <input type="text" id="releasedDate" class="form-control"
+                                    [(ngModel)]="CreateBookModel.releasedDate" name="releasedDate" formControlName="createbookreleasedDate"><!--formControlName="createbookpublisher"-->
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Active" class="col-md-4 col-form-label text-md-right">Active</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Active" class="form-control" [(ngModel)]="CreateBookModel.active"
+                                    name="Active" formControlName="createbookactive"><!--formControlName="createbookactive"-->
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Content" class="col-md-4 col-form-label text-md-right">Content</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Content" class="form-control" [(ngModel)]="CreateBookModel.content"
+                                    name="Content" formControlName="createbookcontent"><!--formControlName="createbookcontent"-->
+                                <br /><br />
+                            </div>
+                        </div>
+                     <!-- <div class="col-md-6 offset-md-4">
+                            <button type="submit" value="Add Customer" (click)="Add()" class="btn btn-primary">
+                                Add
+                            </button>
+                        </div>-->
+                        <div class="form-group row">
+                            <div class="col-md-3 offset-md-2">
+                                <button type="submit" value="Add"  (click)="Add($event)" class="btn btn-primary" [disabled]="!(CreateBookModel.formCreateBookGroup.valid)">
+                                    Add
+                                </button><!--[disabled]="!(CreateBookModel.formCreateBookGroup.valid)"-->
+                            </div>
+                            
+                            <div class="col-md-2 offset-md-1">
+                                <button type="submit" value="Update" (click)="Add($event)" class="btn btn-primary" [disabled]="!(CreateBookModel.formCreateBookGroup.valid)">
+                                    Update
+                                </button><!--[disabled]="!(CreateBookModel.formCreateBookGroup.valid)" -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-grid-ui
+        [grid-columns]="[{'colName':'id'},{'colName':'title'},{'colName':'category'},{'colName':'price'},{'colName':'publisher'},{'colName':'active'},{'colName':'content'},{'colName':'author'},{'colName':'releasedDate'}]"
+        [grid-data]="CreateBookModels"  
+        (grid-selected)="EditBook($event)" (grid-deleted)="DeleteBook($event)"></app-grid-ui>

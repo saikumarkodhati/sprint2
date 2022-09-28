@@ -1,0 +1,88 @@
+<!--<h1>Add Customer</h1>
+Title
+<input [(ngModel)]="CreateBookModel.Title" type="text" /><br/><br/>
+Category
+<input [(ngModel)]="CreateBookModel.Category" type="text" /><br/><br/>
+Image
+<input [(ngModel)]="CreateBookModel.Image" type="text" /><br/><br/>
+Price
+<input [(ngModel)]="SearchBookModel.Price" type="text" /><br/><br/>
+
+Publisher
+<input [(ngModel)]="SearchBookModel.Publisher" type="text" /><br/><br/>
+Active
+<input [(ngModel)]="SearchBookModel.Active" type="text" /><br/><br/>
+Content
+<input [(ngModel)]="SearchBookModel.Content" type="text" /><br/><br/>
+
+
+<input type="button" value="Add Customer" (click)="Add()" />
+<br/><br/>
+<h2>Customer List</h2>-->
+
+
+
+
+
+<br/><br/>
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Search Books</div>
+                    <div class="card-body">
+                        <form action="" method="">
+                            <div class="form-group row">
+                                <label for="Title" class="col-md-2 col-form-label text-md-right">Title</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="Title" class="form-control" [(ngModel)]="SearchBookModel.title" name="Title" required autofocus>
+                                    <br/><br/>
+                                </div>
+                                <label for="Author" class="col-md-2 col-form-label text-md-right">Author</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="Author" class="form-control" [(ngModel)]="SearchBookModel.author" name="Author" required>
+                                    <br/><br/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="Publisher" class="col-md-2 col-form-label text-md-right">Publisher</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="Publisher" class="form-control" [(ngModel)]="SearchBookModel.publisher" name="Publisher" required>
+                                    <br/><br/>
+                                </div>
+                                <label for="ReleasedDate" class="col-md-2 col-form-label text-md-right">Released Date</label>
+                                <div class="col-md-3">
+                                    <input type="text" id="ReleasedDate" class="form-control" [(ngModel)]="SearchBookModel.releasedDate" name="ReleasedDate" required>
+                                    <br/><br/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                               
+                               
+                            </div>
+                            <div class="form-group row">
+                            <div class="col-md-3 offset-md-2">
+                                
+                            </div>
+                            
+                            <div class="col-md-2 offset-md-1">
+                                <button type="submit" value="Search" (click)="Search()" class="btn btn-primary">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+<app-read-ui  [read-columns]="[{'colName':'id'},{'colName':'title'},{'colName':'author'},{'colName':'publisher'},{'colName':'releasedDate'}]"
+    [read-data]="SearchBookModels" 
+    (read-selected)="EditBook($event)"></app-read-ui>
+
+<br><br><br>
+<br><br><br>
+
